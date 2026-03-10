@@ -7,8 +7,8 @@ public class ShowRepository
     private readonly List<Show> _shows = new()
     {
         new Show { Id = 1, Titulo = "Iron Maidem", Genero = "Rock",   Cidade = "Belo Horizonte"},
-        new Show { Id = 2, Titulo = "Gueta Van Fleet", Genero = "Rock",  Cidade = "S„o Paulo"},
-        new Show { Id = 3, Titulo = "Met·lica", Genero = "Rock", Cidade = "Belo Horizonte"},
+        new Show { Id = 2, Titulo = "Gueta Van Fleet", Genero = "Rock",  Cidade = "S√£o Paulo"},
+        new Show { Id = 3, Titulo = "Met√°llica", Genero = "Rock", Cidade = "Belo Horizonte"},
     };
 
     private int _nextId = 4;
