@@ -8,7 +8,7 @@ public class ShowRepository
     {
         new Show { Id = 1, Titulo = "Iron Maidem", Genero = "Rock",   Cidade = "Belo Horizonte"},
         new Show { Id = 2, Titulo = "Gueta Van Fleet", Genero = "Rock",  Cidade = "São Paulo"},
-        new Show { Id = 3, Titulo = "Metállica", Genero = "Rock", Cidade = "Belo Horizonte"},
+        new Show { Id = 3, Titulo = "Metallica", Genero = "Rock", Cidade = "Belo Horizonte"},
     };
 
     private int _nextId = 4;
@@ -44,4 +44,8 @@ public class ShowRepository
         _shows.Remove(show);
         return true;
     }
+
+    public void DeleteAll() => _shows.Clear();
+
+    public void DeleteMany(List<int> ids) => _shows.RemoveAll(s => ids.Contains(s.Id));
 }

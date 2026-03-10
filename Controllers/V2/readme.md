@@ -1,4 +1,4 @@
-# Shows API — Student Instructions
+# Shows API v2 — Student Instructions
 
 ## 1. Starting the API
 
@@ -33,7 +33,7 @@ Swagger is a visual interface built into the API that lets you test endpoints di
 
 ### Try GET all shows
 
-1. Click on **GET** `/api/v1/shows`
+1. Click on **GET** `/api/v2/shows`
 2. Click **"Try it out"**
 3. Click **"Execute"**
 4. The response will appear below with the list of shows:
@@ -48,7 +48,7 @@ Swagger is a visual interface built into the API that lets you test endpoints di
 
 ### Try GET a single show
 
-1. Click on **GET** `/api/v1/shows/{id}`
+1. Click on **GET** `/api/v2/shows/{id}`
 2. Click **"Try it out"**
 3. Enter `1` in the **id** field
 4. Click **"Execute"**
@@ -66,7 +66,7 @@ Postman lets you send HTTP requests with a custom body (JSON).
 3. Set the method to **POST**
 4. Enter the URL:
    ```
-   http://localhost:5000/api/v1/shows
+   http://localhost:5000/api/v2/shows
    ```
 5. Go to the **Body** tab
 6. Select **raw** and choose **JSON** from the dropdown on the right
@@ -97,19 +97,21 @@ Postman lets you send HTTP requests with a custom body (JSON).
 }
 ```
 
-9. Now go back to Swagger and run **GET** `/api/v1/shows` again — you should see the new show in the list.
+9. Now go back to Swagger and run **GET** `/api/v2/shows` again — you should see the new show in the list.
 
 ---
 
 ## 4. Quick Reference — All Endpoints
 
-| Method   | URL                      | Description          |
-|----------|--------------------------|----------------------|
-| GET      | /api/v1/shows            | Get all shows        |
-| GET      | /api/v1/shows/{id}       | Get a show by ID     |
-| POST     | /api/v1/shows            | Create a new show    |
-| PUT      | /api/v1/shows/{id}       | Update a show        |
-| DELETE   | /api/v1/shows/{id}       | Delete a show        |
+| Method   | URL                         | Description               |
+|----------|-----------------------------|---------------------------|
+| GET      | /api/v2/shows               | Get all shows             |
+| GET      | /api/v2/shows/{id}          | Get a show by ID          |
+| POST     | /api/v2/shows               | Create a new show         |
+| PUT      | /api/v2/shows/{id}          | Update a show             |
+| DELETE   | /api/v2/shows/{id}          | Delete a show by ID       |
+| DELETE   | /api/v2/shows               | Delete all shows          |
+| DELETE   | /api/v2/shows/batch         | Delete multiple shows     |
 
 ---
 
@@ -122,3 +124,39 @@ Postman lets you send HTTP requests with a custom body (JSON).
   "cidade": "string"
 }
 ```
+
+---
+
+## 6. Deleting All Shows with Postman
+
+1. Open **Postman**
+2. Set the method to **DELETE**
+3. Enter the URL:
+   ```
+   http://localhost:5000/api/v2/shows
+   ```
+4. Click **Send**
+
+**Status:** `204 No Content`
+
+---
+
+## 7. Deleting Multiple Shows by ID with Postman
+
+1. Open **Postman**
+2. Set the method to **DELETE**
+3. Enter the URL:
+   ```
+   http://localhost:5000/api/v2/shows/batch
+   ```
+4. Go to the **Body** tab
+5. Select **raw** and choose **JSON** from the dropdown on the right
+6. Paste a JSON array of IDs to delete:
+
+```json
+[1, 2, 3]
+```
+
+7. Click **Send**
+
+**Status:** `204 No Content`
